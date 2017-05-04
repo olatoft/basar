@@ -9,11 +9,6 @@ def index():
     return 'hei'
 
 
-@app.route('/draw')
-def draw():
-    return 'this is the draw page'
-
-
 @app.route('/draw/<string:name>/')
 def getPerson(name):
     sitat = ['Heisann og hoppsann lillebror',
@@ -23,9 +18,14 @@ def getPerson(name):
     return render_template('draw.html', **locals())
 
 
-@app.route('/range')
+@app.route('/range', methods=['GET', 'POST'])
 def range():
-    return render_template('range.html')
+    if request.method == 'POST':
+        lower = request.form['lower']
+        print(lower)
+        return render_template('range.html')
+    else:
+        return render_template('range.html')
 
 if __name__ == '__main__':
     app.run()
