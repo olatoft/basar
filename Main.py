@@ -1,5 +1,5 @@
 from flask import (Flask, flash, redirect, render_template, request, session,
-                   abort)
+                   abort, url_for)
 
 app = Flask(__name__)
 
@@ -7,6 +7,11 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return 'hei'
+
+
+@app.route('/draw')
+def draw():
+    return 'Dette er draw-sida'
 
 
 @app.route('/draw/<string:name>/')
@@ -23,7 +28,7 @@ def range():
     if request.method == 'POST':
         lower = request.form['lower']
         print(lower)
-        return render_template('range.html')
+        return redirect(url_for('draw'))
     else:
         return render_template('range.html')
 
