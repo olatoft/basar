@@ -1,4 +1,6 @@
-from flask import Flask, flash, redirect, render_template, request, session, abort
+from flask import (Flask, flash, redirect, render_template, request, session,
+                   abort)
+
 app = Flask(__name__)
 
 
@@ -14,7 +16,16 @@ def draw():
 
 @app.route('/draw/<string:name>/')
 def getPerson(name):
-    return render_template('draw.html', name=name)
+    sitat = ['Heisann og hoppsann lillebror',
+             'å vera elle ikkje vera, namnet skjemme ingen',
+             'Jau, jau, eg driv med sau']
+    sitatet = sitat[1]
+    return render_template('draw.html', **locals())
+
+
+@app.route('/range')
+def range():
+    return render_template('range.html')
 
 if __name__ == '__main__':
     app.run()

@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<form action="/range" method="POST">
+    <input type="username" name="lower" placeholder="Frå">
+    <input type="username" name="upper" placeholder="Til">
+    <input type="submit" value="Start">
+</form>
+
+{% endblock %}
