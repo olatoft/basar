@@ -9,9 +9,9 @@ def index():
     return 'hei'
 
 
-@app.route('/draw')
-def draw():
-    return 'Dette er draw-sida'
+@app.route('/draw/<string:messages>')
+def draw(messages):
+    return messages
 
 
 @app.route('/draw/<string:name>/')
@@ -27,8 +27,7 @@ def getPerson(name):
 def range():
     if request.method == 'POST':
         lower = request.form['lower']
-        print(lower)
-        return redirect(url_for('draw'))
+        return redirect(url_for('draw', messages=lower))
     else:
         return render_template('range.html')
 
