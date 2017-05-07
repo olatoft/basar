@@ -5,6 +5,11 @@ from flask import Flask, flash, request
 
 class TestForm(unittest.TestCase):
 
+    def test_is_positive(self):
+        self.assertEqual(validation.is_positive(3), True)
+        self.assertEqual(validation.is_positive(-3), False)
+        self.assertEqual(validation.is_positive(0), False)
+
     def test_is_bigger(self):
         self.assertEqual(validation.is_bigger(2, 3), True)
         self.assertEqual(validation.is_bigger(3, 2), False)
