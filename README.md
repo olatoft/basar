@@ -18,10 +18,15 @@ sudo apt-get install python3-pip
 
 Install Flask:
 ```
-pip install Flask
+sudo pip3 install Flask
 ```
 
 ## Run
 ```
 python3 Main.py
+```
+
+## Test
+```
+python3 Test.py
 ```
