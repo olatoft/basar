@@ -11,19 +11,28 @@ def is_int(number):
         int(number)
         return True
     except:
-        flash('Du må skrive inn eit tal')
+        try:
+            flash('Du må skrive inn eit tal')
+        except:
+            pass
         return False
 
 
 def is_positive(number):
     if number <= 0:
-        flash('Begge tal må vere positive')
+        try:
+            flash('Begge tal må vere positive')
+        except:
+            pass
         return False
     return True
 
 
 def is_bigger(lower, upper):
     if lower >= upper:
-        flash('"Til" må vere større enn "Frå"')
+        try:
+            flash('"Til" må vere større enn "Frå"')
+        except:
+            pass
         return False
     return True
