@@ -1,5 +1,7 @@
 # Basar
 
+[![Build Status](https://travis-ci.org/olatoft/basar.svg?branch=unit_testing)](https://travis-ci.org/olatoft/basar)
+
 Simple lottery website
 
 ## Dependencies
