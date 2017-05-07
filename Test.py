@@ -5,6 +5,14 @@ from flask import Flask, flash, request
 
 class TestForm(unittest.TestCase):
 
+    def test_is_int(self):
+        self.assertEqual(validation.is_int('3'), True)
+        self.assertEqual(validation.is_int('2.5'), False)
+        self.assertEqual(validation.is_int('-3'), True)
+        self.assertEqual(validation.is_int('0'), True)
+        self.assertEqual(validation.is_int('tre'), False)
+        self.assertEqual(validation.is_int(''), False)
+
     def test_is_positive(self):
         self.assertEqual(validation.is_positive(3), True)
         self.assertEqual(validation.is_positive(-3), False)
