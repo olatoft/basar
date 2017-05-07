@@ -1,3 +1,6 @@
+from flask import flash
+
+
 def is_valid_form(lower, upper):
     return (is_int(lower) and is_int(upper) and is_positive(int(lower)) and
             is_positive(int(upper)) and is_bigger(int(lower), int(upper)))
@@ -16,4 +19,5 @@ def is_int(number):
         int(number)
         return True
     except:
+        flash('Du maa skrive inn eit tal')
         return False

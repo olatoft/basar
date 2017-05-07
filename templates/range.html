@@ -7,4 +7,14 @@
     <input type="submit" value="Start">
 </form>
 
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
 {% endblock %}
