@@ -6,18 +6,24 @@ def is_valid_form(lower, upper):
             is_positive(int(upper)) and is_bigger(int(lower), int(upper)))
 
 
-def is_bigger(lower, upper):
-    return upper > lower
-
-
-def is_positive(number):
-    return number > 0
-
-
 def is_int(number):
     try:
         int(number)
         return True
     except:
-        flash('Du maa skrive inn eit tal')
+        flash('Du må skrive inn eit tal')
         return False
+
+
+def is_positive(number):
+    if number <= 0:
+        flash('Begge tal må vere positive')
+        return False
+    return True
+
+
+def is_bigger(lower, upper):
+    if lower >= upper:
+        flash('"Til" må vere større enn "Frå"')
+        return False
+    return True
