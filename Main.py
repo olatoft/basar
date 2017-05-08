@@ -16,7 +16,7 @@ def draw():
     lower = int(session['lower'])
     upper = int(session['upper'])
     random_number = str(drawer.get_random_number(lower, upper))
-    return random_number
+    return render_template('draw.html', **locals())
 
 
 @app.route('/test/<string:name>/')
