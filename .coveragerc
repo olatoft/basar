@@ -2,3 +2,8 @@
 omit=
     /usr/*
     Test.py
+
+[report]
+omit=
+    /usr/*
+    Test.py
