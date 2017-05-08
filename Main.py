@@ -1,6 +1,7 @@
 from flask import (Flask, flash, redirect, render_template, request, session,
                    url_for)
 import validation
+import drawer
 
 app = Flask(__name__)
 
@@ -12,10 +13,13 @@ def index():
 
 @app.route('/draw')
 def draw():
-    return session['lower'] + session['upper']
+    lower = int(session['lower'])
+    upper = int(session['upper'])
+    random_number = str(drawer.get_random_number(lower, upper))
+    return random_number
 
 
-@app.route('/draw/<string:name>/')
+@app.route('/test/<string:name>/')
 def getPerson(name):
     sitat = ['Heisann og hoppsann lillebror',
              'å vera elle ikkje vera, namnet skjemme ingen',
