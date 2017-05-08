@@ -2,9 +2,7 @@ language: python
 python:
   - "3.5"
 install:
-  - pip install Flask
-  - pip install coverage
-  - pip install coveralls
+  - pip install Flask coverage coveralls
 script:
   - coverage run Test.py
 after_success:

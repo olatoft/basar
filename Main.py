@@ -1,26 +1,21 @@
 from flask import (Flask, flash, redirect, render_template, request, session,
                    url_for)
 import validation
+import drawer
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return 'hei'
+    return redirect(url_for('range'))
 
 
-@app.route('/draw')
+@app.route('/draw', methods=['GET', 'POST'])
 def draw():
-    return session['lower'] + session['upper']
-
-
-@app.route('/draw/<string:name>/')
-def getPerson(name):
-    sitat = ['Heisann og hoppsann lillebror',
-             'å vera elle ikkje vera, namnet skjemme ingen',
-             'Jau, jau, eg driv med sau']
-    sitatet = sitat[1]
+    lower = int(session['lower'])
+    upper = int(session['upper'])
+    random_number = str(drawer.get_random_number(lower, upper))
     return render_template('draw.html', **locals())
 
 
