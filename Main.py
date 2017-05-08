@@ -8,23 +8,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'hei'
+    return redirect(url_for('range'))
 
 
-@app.route('/draw')
+@app.route('/draw', methods=['GET', 'POST'])
 def draw():
     lower = int(session['lower'])
     upper = int(session['upper'])
     random_number = str(drawer.get_random_number(lower, upper))
-    return render_template('draw.html', **locals())
-
-
-@app.route('/test/<string:name>/')
-def getPerson(name):
-    sitat = ['Heisann og hoppsann lillebror',
-             'å vera elle ikkje vera, namnet skjemme ingen',
-             'Jau, jau, eg driv med sau']
-    sitatet = sitat[1]
     return render_template('draw.html', **locals())
 
 
