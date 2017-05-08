@@ -1,6 +1,6 @@
 # Basar
 
-[![Build Status](https://travis-ci.org/olatoft/basar.svg?branch=unit_testing)](https://travis-ci.org/olatoft/basar) [![Coverage Status](https://coveralls.io/repos/github/olatoft/basar/badge.svg?branch=unit_testing)](https://coveralls.io/github/olatoft/basar?branch=unit_testing)
+[![Build Status](https://travis-ci.org/olatoft/basar.svg?branch=master)](https://travis-ci.org/olatoft/basar) [![Coverage Status](https://coveralls.io/repos/github/olatoft/basar/badge.svg?branch=master)](https://coveralls.io/github/olatoft/basar?branch=master)
 
 Simple lottery website
 
