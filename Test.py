@@ -1,6 +1,5 @@
 import unittest
 import validation
-from flask import Flask, flash, request
 
 
 class TestForm(unittest.TestCase):
