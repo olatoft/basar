@@ -8,4 +8,4 @@ install:
 script:
   - coverage run Test.py
 after_success:
-  - coveralls --rcfile=.coveragerc
+  - coveralls
