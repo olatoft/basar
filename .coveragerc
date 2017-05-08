@@ -1,5 +1,4 @@
 [run]
 omit=
-    /usr/*
+    */lib/*
     Test.py
-    */virtualenv/*
